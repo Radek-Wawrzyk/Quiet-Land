@@ -1,0 +1,197 @@
+.navigation {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0 50px;
+  height: 50px;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//Navigation logo
+
+.navigation-logo {
+  color: white;
+  font-weight: 700;
+}
+
+//Navigation menu
+
+.navigation-menu {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.navigation-menu-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 12px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    transform: scaleX(0);
+    transition: transform 0.25s;
+    transform-origin: left;
+  }
+  &:hover::before, &:focus::before {
+    transform: scaleX(1);
+  }
+}
+
+//Navigation button
+$color2: black;
+$color1: white;
+
+.navigation-button {
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: none;
+  position: relative;
+  display: none;
+  background: none;
+  cursor: pointer;
+  outline: none;  
+}
+.navigation-button:hover .navigation-button-description, 
+.navigation-button:focus .navigation-button-description  {
+  color: $color2;
+}
+.navigation-button:hover span, .navigation-button:hover span::before,
+.navigation-button:hover span::after, .navigation-button:focus span, 
+.navigation-button:focus span::before, .navigation-button:focus span::after, {
+  background: $color2;
+}
+.navigation-button-description {
+  position: absolute;
+  left: -55px;
+  padding: 0 10px 0 0;
+  top: 0;
+  font-size: 18px;
+  color: $color1; 
+  font-weight: 500;
+  transition: color 0.25s;    
+}
+.navigation-button span {
+  width: 22px;
+  height: 2px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  background: $color1;
+  transition: background 0.4s;
+}
+.navigation-button span::before, .navigation-button span::after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: $color1;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 0.5s, left 0.5s, transform 0.5s, background 0.25s;
+}
+.navigation-button span::before {
+  top: 8px;
+}
+.navigation-button span::after {
+  top: -8px;
+}
+
+//Active class for button
+
+.navigation-button.active .navigation-button-description {
+  color: $color2
+}
+.navigation-button.active:hover .navigation-button-description, 
+.navigation-button.active:focus .navigation-button-description  {
+  color: $color2;
+}
+.navigation-button.active span {
+  background: rgba(0,0,0,0)
+}
+.navigation-button.active span::before {
+  top: 0;
+  left: 0;
+  transform: rotate(45deg);
+  background: $color2
+}
+.navigation-button.active span::after {
+  top: 0;
+  left: 0;
+  transform: rotate(135deg);
+  background: $color2;
+}
+.navigation-button.active:hover span::before,
+.navigation-button.active:hover span::after, 
+.navigation-button.active:focus span::before, .navigation-button.active:focus span::after, {
+  background: $color2;
+}
+
+//Media 
+
+@media screen and (max-width: 768px) {
+  .navigation {
+    padding: 0 25px;
+    transition: background 0.25s;
+  }
+  .navigation.active {
+    background: white;
+    border-bottom-color: rgba(0,0,0,0.2);
+    .navigation-logo {
+      color: black;
+    }
+  }
+  .navigation-button {
+    display: block;
+  }
+  .navigation-menu {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: calc(100% - 60px);
+    opacity: 0;
+    visibility: hidden;
+    background: white;
+    transition: background 0.25s, opacity 0.25s, visibility 0.25s;
+    flex-direction: column;
+    align-items: center;
+  }
+  .navigation-menu-link {
+    color: black;
+    height: auto;
+    font-size: 18px;
+    padding: 15px 0;
+    &::before {
+      background: black;
+    }
+  }
+  .navigation-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navigation {
+    padding: 0 15px;
+  }
+}
