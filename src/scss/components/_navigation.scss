@@ -10,6 +10,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: background 0.25s;
+}
+.navigation.scroll {
+  background: white;
+  border-color: rgb(207, 207, 207);
+  .navigation-logo {
+    color: $green;
+  }
+  .navigation-menu-link {
+    color: black;
+  }
 }
 
 //Navigation logo
@@ -37,6 +48,7 @@
   font-size: 13px;
   font-weight: 600;
   outline: none;
+  transition: color 0.25s;
   &::before {
     content: "";
     position: absolute;
@@ -51,6 +63,15 @@
   }
   &:hover::before, &:focus::before {
     transform: scaleX(1);
+  }
+}
+
+.navigation.scroll .navigation-menu-link {
+  &:hover, &:focus {
+    color: $green;
+  }
+  &::before {
+    background: $green;
   }
 }
 
@@ -71,12 +92,12 @@ $color1: white;
 }
 .navigation-button:hover .navigation-button-description, 
 .navigation-button:focus .navigation-button-description  {
-  color: $color2;
+  color: $green;
 }
 .navigation-button:hover span, .navigation-button:hover span::before,
 .navigation-button:hover span::after, .navigation-button:focus span, 
 .navigation-button:focus span::before, .navigation-button:focus span::after, {
-  background: $color2;
+  background: $green;
 }
 .navigation-button-description {
   position: absolute;
@@ -84,7 +105,7 @@ $color1: white;
   padding: 0 10px 0 0;
   top: 0;
   font-size: 18px;
-  color: $color1; 
+  color: black; 
   font-weight: 500;
   transition: color 0.25s;    
 }
@@ -95,7 +116,7 @@ $color1: white;
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  background: $color1;
+  background:black;
   transition: background 0.4s;
 }
 .navigation-button span::before, .navigation-button span::after {
@@ -103,7 +124,7 @@ $color1: white;
   position: absolute;
   width: 22px;
   height: 2px;
-  background: $color1;
+  background: black;
   left: 50%;
   transform: translateX(-50%);
   transition: top 0.5s, left 0.5s, transform 0.5s, background 0.25s;
@@ -118,11 +139,11 @@ $color1: white;
 //Active class for button
 
 .navigation-button.active .navigation-button-description {
-  color: $color2
+  color: $green;
 }
 .navigation-button.active:hover .navigation-button-description, 
 .navigation-button.active:focus .navigation-button-description  {
-  color: $color2;
+  color: $green;
 }
 .navigation-button.active span {
   background: rgba(0,0,0,0)
@@ -131,18 +152,18 @@ $color1: white;
   top: 0;
   left: 0;
   transform: rotate(45deg);
-  background: $color2
+  background: $green;
 }
 .navigation-button.active span::after {
   top: 0;
   left: 0;
   transform: rotate(135deg);
-  background: $color2;
+  background: $green;
 }
 .navigation-button.active:hover span::before,
 .navigation-button.active:hover span::after, 
 .navigation-button.active:focus span::before, .navigation-button.active:focus span::after, {
-  background: $color2;
+  background: $green;
 }
 
 //Media 
@@ -150,14 +171,10 @@ $color1: white;
 @media screen and (max-width: 768px) {
   .navigation {
     padding: 0 25px;
-    transition: background 0.25s;
-  }
-  .navigation.active {
     background: white;
-    border-bottom-color: rgba(0,0,0,0.2);
-    .navigation-logo {
-      color: black;
-    }
+  }
+  .navigation-logo {
+    color: $green;
   }
   .navigation-button {
     display: block;
@@ -167,7 +184,7 @@ $color1: white;
     left: 0;
     top: 50px;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 50px);
     opacity: 0;
     visibility: hidden;
     background: white;
@@ -181,7 +198,10 @@ $color1: white;
     font-size: 18px;
     padding: 15px 0;
     &::before {
-      background: black;
+      background: $green;
+    }
+    &:hover {
+      color: $green;
     }
   }
   .navigation-menu.active {

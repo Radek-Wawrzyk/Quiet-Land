@@ -5,13 +5,12 @@ const navigation = () => {
   const navMenu = document.querySelector(".navigation-menu");
   const navBtn = document.querySelector(".navigation-button");
   const navLink = document.querySelectorAll(".navigation-menu-link");
+  const main = document.querySelector("main");
   
   navBtn.addEventListener("click", () => {
-    nav.classList.toggle("active");
     navBtn.classList.toggle("active");
     navMenu.classList.toggle("active");
     
-
     let aria = navBtn.getAttribute("aria-expanded");
 
     if (aria == "false")  aria = "true"
@@ -20,6 +19,18 @@ const navigation = () => {
     navBtn.setAttribute("aria-expanded", aria);
   });
 
+  let scrollPos = window.scrollY;
+  const navHeight = nav.offsetHeight;
+
+  window.addEventListener("scroll", () => {
+    scrollPos = window.scrollY;
+    
+    if (scrollPos >= navHeight) {
+      nav.classList.add("scroll");
+    } else {
+      nav.classList.remove("scroll");
+    }
+  });
 }
 
 //Inits
