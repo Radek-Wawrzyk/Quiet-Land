@@ -20,6 +20,13 @@
   }
   .navigation-menu-link {
     color: black;
+    &.active {
+      color: $green;
+    }
+    &.active::before {
+      background: $green;
+      transform: scaleX(1);
+    }
   }
 }
 
@@ -63,6 +70,12 @@
   }
   &:hover::before, &:focus::before {
     transform: scaleX(1);
+  }
+  &.active {
+    color: $green;
+  }
+  &.acitve::before {
+    background: $green;
   }
 }
 

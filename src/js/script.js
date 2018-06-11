@@ -31,6 +31,38 @@ const navigation = () => {
       nav.classList.remove("scroll");
     }
   });
+  
+  document.addEventListener('click', () => {
+    if (!event.target.classList.contains("navigation-menu-link")) {
+      return;
+    } 
+
+    event.target.classList.add('active');
+    
+    for (let i = 0; i < navLink.length; i++) {
+      if (navLink[i] === event.target) {
+        continue;
+      }
+      if (navBtn.classList.contains("active")) {
+        close();
+      }   
+      navLink[i].classList.remove('active');
+    }
+  }, false);
+
+  document.onkeydown = (e) => {
+    e = e || window.event;
+    if (e.keyCode == 27) {
+      close();
+    }
+  };
+ 
+  const close = () => {
+    navBtn.classList.remove("active");
+    navBtn.setAttribute("aria-expanded", false);
+    navMenu.classList.remove("active");
+  };
+
 }
 
 //Inits
