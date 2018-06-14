@@ -17,3 +17,9 @@
 
 
 //Media
+
+@media screen and (max-width: 576px) {
+  .section {
+    margin: 50px auto;
+  }
+}

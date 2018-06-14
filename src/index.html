@@ -10,9 +10,9 @@
 <body>
 
   <nav class="navigation">
-    <div class="navigation-logo">
+    <figure class="navigation-logo">
       Cicha Kraina
-    </div>
+    </figure>
     <button class="navigation-button" aria-expanded="false" title="Open mobile menu" aria-label="Open mobile menu" aria-controls="menu">
       <span></span>
       <p class="navigation-button-description">Menu</p>
@@ -28,11 +28,13 @@
   <header class="header">
     <h1 class="header-title">Cicha kraina jest idealnym miejscem dla Ciebie!</h1>
     <div class="header-video">
-      <video autoplay poster="img/img1.jpg" muted>
-        <source src="video/video.mp4" type="video/mp4">
-      </video>
+      <div class="screen" id="tv">
     </div>
   </header>
+
+  <div class="tv">
+    
+  </div>
 
   <main>
     <section class="section" id="land">
@@ -178,18 +180,21 @@
           Przyjedź. Przeżyj. Zostań. W cichej krainie. 
         </h3>
         <p class="contact-text">
-          Skontaktuj się ze mną! <span class="contact-tel">601 243 850</span>
+          Skontaktuj się ze mną!</br> tel: <span class="contact-tel">601 243 850</span></br>
+          mail: <span class="contact-tel">info@sokolnicki.pl</span>
         </p>
       </div>
     </section>
   </main>
 
-  <footer>
-
+  <footer class="footer">
+    <p class="footer-text">Copyright Cicha Kraina 2018</p>
+    <p class="footer-author">Created by <a href="https://github.com/Radek-Wawrzyk">Radziu</a></p>
   </footer>
 
   <script src="js/glightbox.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/script.js"></script>
-
+  
 </body>
 </html>
