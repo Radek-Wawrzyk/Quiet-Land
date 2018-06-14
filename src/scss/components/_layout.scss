@@ -1,6 +1,19 @@
 .section {
   max-width: 1200px;
   width: 100%;
-  margin: 50px auto;
+  margin: 100px auto;
   padding: 0 15px;
 }
+.section-header {
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 0 25px 0;
+}
+.section-title {
+  padding: 8px 0 8px 10px;
+  border-left: 4px solid $green;
+  border-bottom: 4px solid $green;
+}
+
+
+//Media

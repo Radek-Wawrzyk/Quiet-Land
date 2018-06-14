@@ -1,0 +1,30 @@
+.contact-title {
+  color: $grey;
+  line-height: 1.4;
+  font-size: 25px;
+  text-align: justify;
+  span {
+    color: $green;
+    border-bottom: 3px solid $green;
+  }
+}
+.contact-text {
+  margin: 50px 0;
+  font-size: 24px;
+  span {
+    color: $green;
+    font-weight: 600;
+  }
+}
+
+//Media
+
+@media screen and (max-width: 768px) {
+  .contact-title {
+    font-size: 20px;
+  }
+  .contact-text {
+    font-size: 18px;
+    text-align: center;
+  }
+}

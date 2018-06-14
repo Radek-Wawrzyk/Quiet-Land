@@ -1,0 +1,38 @@
+.sell-list {
+  margin: 0 0 0 25px;
+}
+.sell-list-item {
+  position: relative;
+  font-size: 18px;
+  font-weight: 600;
+  color: $grey;
+  margin: 10px 0;
+  &::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background: $green;
+  }
+}
+.sell-list-text {
+  margin: 25px 0 5px 0;
+  font-weight: 600;
+}
+.sell-text-add {
+  margin: 25px 0;
+  text-align: justify;
+}
+
+//Media 
+
+@media screen and (max-width: 576px) {
+  .sell-list-item {
+    font-size: 14px;
+    &::before {
+      top: 6px;
+    }
+  }
+}
