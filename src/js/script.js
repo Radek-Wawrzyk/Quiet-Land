@@ -63,6 +63,37 @@ const navigation = () => {
     navMenu.classList.remove("active");
   };
 
+  
+  function scrollIt(element) {  
+    window.scrollTo({
+      'behavior': 'smooth',
+      'left': 0,
+      'top': element.offsetTop
+    });
+  };
+  
+  const sections = document.querySelectorAll('.section');
+  const header = document.querySelector('.header');
+    
+  navLink[0].addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollIt(sections[0]);
+  });
+
+  navLink[1].addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollIt(sections[1]);
+  });
+
+  navLink[2].addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollIt(sections[2]);
+  });
+
+  navLink[3].addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollIt(sections[3]);
+  });
 }
 
 //Lightbox gallery
