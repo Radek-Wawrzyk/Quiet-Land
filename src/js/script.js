@@ -65,5 +65,9 @@ const navigation = () => {
 
 }
 
+let gallery =  GLightbox({
+  'gallery-list': 'glightbox'
+});
+
 //Inits
 navigation();

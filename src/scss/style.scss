@@ -4,8 +4,14 @@
 //Settings
 @import "./components/typography";
 @import "./components/settings";
+@import "./components/layout";
+
+//Lightbox
+@import "./components/lightbox";
 
 //Components
 @import "./components/navigation";
 @import "./components/header";
+
+@import "./components/gallery";
 
