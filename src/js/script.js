@@ -183,6 +183,5 @@ let gallery =  GLightbox({
    vidRescale();
  });
 
-
 //Inits
 navigation();
