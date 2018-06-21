@@ -94,6 +94,10 @@ const navigation = () => {
     e.preventDefault();
     scrollIt(sections[3]);
   });
+  navLink[4].addEventListener('click', (e) => {
+    e.preventDefault();
+    scrollIt(sections[4]);
+  });
 }
 
 //Lightbox gallery
